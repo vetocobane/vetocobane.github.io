@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ title }} — Cxbane" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0a0807" />
+  <title>{{ title }} — Cxbane</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+  <header class="legal-header">
+    <a href="/" class="nav-logo">
+      <span class="logo-wordmark">CXBANE</span>
+    </a>
+    <a href="/" class="legal-back">← Zurück</a>
+  </header>
+
+  <main class="legal-main">
+    {{ content | safe }}
+  </main>
+
+  <footer id="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; {{ site.year }} Cxbane. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/impressum/" class="footer-link">Impressum</a>
+        <a href="/datenschutz/" class="footer-link">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

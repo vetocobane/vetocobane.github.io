@@ -1,0 +1,502 @@
+---
+layout: base.njk
+title: Cxbane — Art & Music
+---
+
+{# ─── NAV ─────────────────────────────────────────────────────────────────── #}
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo">
+    {# To use a logo image: place file at src/assets/images/logo.png and replace the span below with:
+       <img src="/assets/images/logo.png" alt="Cxbane" class="logo-img" /> #}
+    <span class="logo-wordmark">CXBANE</span>
+  </a>
+
+  <ul class="nav-links" id="nav-links" role="list">
+    <li><a href="#about"   class="nav-link">About</a></li>
+    <li><a href="#gallery" class="nav-link">Work</a></li>
+    <li><a href="#music"   class="nav-link">Music</a></li>
+    <li><a href="#links"   class="nav-link">Links</a></li>
+  </ul>
+
+  <button
+    class="nav-toggle"
+    id="nav-toggle"
+    aria-label="Toggle navigation"
+    aria-expanded="false"
+    aria-controls="nav-links"
+  >
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </button>
+</nav>
+
+{# ─── HERO ─────────────────────────────────────────────────────────────────── #}
+<section id="hero" aria-label="Hero">
+  <div class="hero-atmosphere" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Portfolio</span>
+    <h1 class="hero-name">CXBANE</h1>
+    <p class="hero-tagline">Art &nbsp;&middot;&nbsp; Music &nbsp;&middot;&nbsp; Vision</p>
+    <div class="hero-actions">
+      <a href="#gallery" class="btn btn-filled">View Work</a>
+      <a href="#music"   class="btn btn-outline">Listen Now</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span class="scroll-label">Scroll</span>
+    <span class="scroll-line"></span>
+  </div>
+</section>
+
+{# ─── ABOUT ────────────────────────────────────────────────────────────────── #}
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-layout fade-in">
+
+      <div class="about-copy">
+        <span class="eyebrow">About</span>
+        <h2 class="section-heading" id="about-heading">Cxbane</h2>
+        <div class="rule"></div>
+        <p class="body-text">
+          Hey, I'm Vlad aka Cxbane. I'm based in Mannheim, Germany, and for as long as I can remember, art has been the thing that keeps me sane. Music and illustration aren't hobbies for me, they're outlets. Ways to process what's going on inside, to turn the darker, heavier stuff into something you can actually look at or listen to. My sound is stripped back but loaded. Dark atmospheres, honest words, minimal noise. And the visuals I create follow the same logic: nothing wasted, everything intentional.
+        </p>
+        <p class="body-text">
+          There's a thread running through all of it: the need to make sense of what's in my head by putting it somewhere outside of it. If that resonates with you, you're in the right place.
+        </p>
+        <a
+          href="https://linktr.ee/cxbane"
+          class="btn btn-outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >All Platforms</a>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-image-frame">
+          <img src="/assets/images/profile/cxbane.jpeg" alt="Cxbane" />
+          <div class="frame-accent" aria-hidden="true"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ─── GALLERY ──────────────────────────────────────────────────────────────── #}
+<section id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Selected Work</span>
+      <h2 class="section-heading" id="gallery-heading">Gallery</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gallery-filters fade-in" role="group" aria-label="Filter artwork by category">
+      <button class="filter-btn active" data-filter="illustrations">Illustrations</button>
+      <button class="filter-btn" data-filter="characters">Characters</button>
+      <button class="filter-btn" data-filter="covers">Covers</button>
+      <button class="filter-btn" data-filter="abstract">Abstract</button>
+      <button class="filter-btn" data-filter="sketches">Sketches</button>
+    </div>
+    <div class="gallery-grid" aria-label="Artwork gallery">
+
+      {# ── Illustrations ── #}
+      <article class="gallery-item" data-category="illustrations">
+        <div class="gallery-media">
+          <img src="/assets/images/illustrations/desert_rhino.jpg" alt="Desert Rhino" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Desert Rhino</h3>
+          <span class="item-meta">Illustration</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="illustrations">
+        <div class="gallery-media">
+          <img src="/assets/images/illustrations/troll_fight.jpg" alt="Troll Fight" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Troll Fight</h3>
+          <span class="item-meta">Illustration</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="illustrations">
+        <div class="gallery-media">
+          <img src="/assets/images/illustrations/prophet_of_luck.jpg" alt="Prophet of Luck" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Prophet of Luck</h3>
+          <span class="item-meta">Illustration</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="illustrations">
+        <div class="gallery-media">
+          <img src="/assets/images/illustrations/lizard.jpg" alt="Lizard" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Lizard</h3>
+          <span class="item-meta">Illustration</span>
+        </div>
+      </article>
+
+      {# ── Characters ── #}
+      <article class="gallery-item" data-category="characters">
+        <div class="gallery-media">
+          <img src="/assets/images/characters/character_malik_01.png" alt="Malik I" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Malik I</h3>
+          <span class="item-meta">Character</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="characters">
+        <div class="gallery-media">
+          <img src="/assets/images/characters/character_malik_02.png" alt="Malik II" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Malik II</h3>
+          <span class="item-meta">Character</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="characters">
+        <div class="gallery-media">
+          <img src="/assets/images/characters/character_malik_03.png" alt="Malik III" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Malik III</h3>
+          <span class="item-meta">Character</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="characters">
+        <div class="gallery-media">
+          <img src="/assets/images/characters/uchiha.jpg" alt="Uchiha" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Uchiha</h3>
+          <span class="item-meta">Character</span>
+        </div>
+      </article>
+
+      {# ── Covers ── #}
+      <article class="gallery-item" data-category="covers">
+        <div class="gallery-media">
+          <img src="/assets/images/covers/cover_01.png" alt="Cover 01" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Cover 01</h3>
+          <span class="item-meta">Cover Art</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="covers">
+        <div class="gallery-media">
+          <img src="/assets/images/covers/cover_02.jpg" alt="Cover 02" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Cover 02</h3>
+          <span class="item-meta">Cover Art</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="covers">
+        <div class="gallery-media">
+          <img src="/assets/images/covers/cover_03.png" alt="Cover 03" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Cover 03</h3>
+          <span class="item-meta">Cover Art</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="covers">
+        <div class="gallery-media">
+          <img src="/assets/images/covers/cover_04.png" alt="Cover 04" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Cover 04</h3>
+          <span class="item-meta">Cover Art</span>
+        </div>
+      </article>
+
+      {# ── Abstract ── #}
+      <article class="gallery-item" data-category="abstract">
+        <div class="gallery-media">
+          <img src="/assets/images/abstract/shape_study.png" alt="Shape Study" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Shape Study</h3>
+          <span class="item-meta">Abstract</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="abstract">
+        <div class="gallery-media">
+          <img src="/assets/images/abstract/abstract_logo.png" alt="Abstract Logo" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Abstract Logo</h3>
+          <span class="item-meta">Abstract</span>
+        </div>
+      </article>
+
+      {# ── Sketches ── #}
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_00.jpg" alt="Sketch 00" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 00</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_01.jpg" alt="Sketch 01" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 01</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_02.jpg" alt="Sketch 02" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 02</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_03.jpg" alt="Sketch 03" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 03</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_04.jpg" alt="Sketch 04" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 04</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_05.jpg" alt="Sketch 05" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 05</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_06.jpg" alt="Sketch 06" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 06</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_07.jpg" alt="Sketch 07" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 07</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_08.jpg" alt="Sketch 08" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 08</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_09.jpg" alt="Sketch 09" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 09</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+      <article class="gallery-item" data-category="sketches">
+        <div class="gallery-media">
+          <img src="/assets/images/sketches/sketch_10.jpg" alt="Sketch 10" loading="lazy" />
+        </div>
+        <div class="gallery-overlay" aria-hidden="true">
+          <h3 class="item-title">Sketch 10</h3>
+          <span class="item-meta">Sketch &nbsp;&middot;&nbsp; 2026</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+{# ─── MUSIC ────────────────────────────────────────────────────────────────── #}
+<section id="music" aria-labelledby="music-heading">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Discography</span>
+      <h2 class="section-heading" id="music-heading">Music</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="music-grid fade-in">
+
+      <div class="music-card">
+        <div class="card-header">
+          <span class="card-label">Stream on</span>
+          <span class="card-platform">SoundCloud</span>
+        </div>
+        {#
+          Replace the embed-placeholder below with your SoundCloud widget.
+          Example:
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/YOUR_USERNAME/YOUR_TRACK&color=%23c4b49a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+          </iframe>
+        #}
+        <iframe
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/cxbane&color=%23c4b49a&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true">
+        </iframe>
+      </div>
+
+      <div class="music-card">
+        <div class="card-header">
+          <span class="card-label">Stream on</span>
+          <span class="card-platform">Spotify</span>
+        </div>
+        {#
+          Replace the embed-placeholder below with your Spotify embed.
+          Example:
+          <iframe style="border-radius:4px"
+            src="https://open.spotify.com/embed/artist/YOUR_ARTIST_ID?utm_source=generator&theme=0"
+            width="100%" height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+          </iframe>
+        #}
+        <iframe
+          src="https://open.spotify.com/embed/artist/0JxCaIQMvQDjaiB91qJggM?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="music-card">
+        <div class="card-header">
+          <span class="card-label">Watch on</span>
+          <span class="card-platform">YouTube</span>
+        </div>
+        {#
+          Replace the embed-placeholder below with your YouTube embed.
+          Example:
+          <iframe width="100%" height="215"
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Cxbane on YouTube" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        #}
+        <iframe
+          width="100%"
+          height="300"
+          src="https://www.youtube-nocookie.com/embed/qZbKqWqK9gc"
+          title="Cxbane on YouTube"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# ─── LINKS ────────────────────────────────────────────────────────────────── #}
+<section id="links" aria-labelledby="links-heading">
+  <div class="container">
+    <div class="links-inner fade-in">
+      <span class="eyebrow">Connect</span>
+      <h2 class="section-heading" id="links-heading">Links</h2>
+      <div class="rule"></div>
+      <p class="body-text links-desc">
+        Every platform, release, and social in one place.
+      </p>
+      <a
+        href="https://linktr.ee/cxbane"
+        class="linktree-cta"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit Cxbane's Linktree — linktr.ee/cxbane"
+      >
+        <span class="cta-main">All Links</span>
+        <span class="cta-sub">linktr.ee/cxbane</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+{# ─── LIGHTBOX ─────────────────────────────────────────────────────────────── #}
+<div id="lightbox" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Image viewer">
+  <div class="lb-backdrop"></div>
+  <button class="lb-close" aria-label="Close">&#215;</button>
+  <button class="lb-prev" aria-label="Previous image">&#8592;</button>
+  <button class="lb-next" aria-label="Next image">&#8594;</button>
+  <figure class="lb-figure">
+    <img class="lb-img" src="" alt="" />
+    <figcaption class="lb-caption">
+      <span class="lb-title"></span>
+      <span class="lb-meta"></span>
+    </figcaption>
+  </figure>
+</div>
+
+{# ─── FOOTER ───────────────────────────────────────────────────────────────── #}
+<footer id="footer">
+  <div class="footer-inner">
+    <span class="footer-copy">&copy; {{ site.year }} Cxbane. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="/impressum/" class="footer-link">Impressum</a>
+      <a href="/datenschutz/" class="footer-link">Datenschutz</a>
+      <a href="#hero" class="footer-top">Back to top &uarr;</a>
+    </div>
+  </div>
+</footer>
