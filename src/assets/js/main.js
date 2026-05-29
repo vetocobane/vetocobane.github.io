@@ -89,6 +89,41 @@ filterBtns.forEach((btn) => {
 
 applyFilter('illustrations');
 
+/* ─── Showreel ──────────────────────────────────────────────── */
+const showreelBanner   = document.getElementById('showreel-banner');
+const showreelModal    = document.getElementById('showreel-modal');
+const showreelFullFrame = document.getElementById('showreel-full');
+const showreelCloseBtn = showreelModal.querySelector('.showreel-close');
+const showreelBackdrop = showreelModal.querySelector('.showreel-backdrop');
+
+const SHOWREEL_SRC = 'https://player.vimeo.com/video/1144147388?autoplay=1&color=c4b49a&byline=0&title=0&portrait=0&dnt=1';
+
+function openShowreel() {
+  showreelFullFrame.src = SHOWREEL_SRC;
+  showreelModal.classList.add('open');
+  showreelModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  showreelCloseBtn.focus();
+}
+
+function closeShowreel() {
+  showreelModal.classList.remove('open');
+  showreelModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  showreelFullFrame.src = '';
+}
+
+showreelBanner.addEventListener('click', openShowreel);
+showreelBanner.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openShowreel(); }
+});
+showreelCloseBtn.addEventListener('click', closeShowreel);
+showreelBackdrop.addEventListener('click', closeShowreel);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && showreelModal.classList.contains('open')) closeShowreel();
+});
+
 /* ─── Lightbox ──────────────────────────────────────────────── */
 const lightbox    = document.getElementById('lightbox');
 const lbImg       = lightbox.querySelector('.lb-img');

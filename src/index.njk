@@ -85,6 +85,50 @@ title: Cxbane — Art & Music
   </div>
 </section>
 
+{# ─── SHOWREEL ─────────────────────────────────────────────────────────────── #}
+<section id="showreel" aria-label="Showreel">
+  <div class="showreel-banner" id="showreel-banner" role="button" tabindex="0" aria-label="Expand showreel video">
+    <iframe
+      id="showreel-bg"
+      src="https://player.vimeo.com/video/1144147388?background=1&autoplay=1&muted=1&loop=1&dnt=1"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      title="Cxbane Showreel">
+    </iframe>
+    <div class="showreel-hint" aria-hidden="true">
+      <span class="showreel-hint-icon">&#8599;</span>
+      <span class="showreel-hint-label">Play</span>
+    </div>
+  </div>
+  <div class="showreel-credits">
+    <div class="container">
+      <p class="credits-title">Age of Empires · Red Bull Gaming · Agency Beton</p>
+      <ul class="credits-list">
+        <li><span class="credits-role">Written &amp; Directed by</span> Dennis Charly Bergande</li>
+        <li><span class="credits-role">Creative Producer</span> Vlad Kiselev aka <span class="credits-highlight">Cxbane</span></li>
+        <li><span class="credits-role">Senior Producer Red Bull</span> Jonas Gehricke</li>
+        <li><span class="credits-role">CGI Studio</span> RDZN Studio</li>
+        <li><span class="credits-role">Sound Design</span> Tarek Soltani, StudioDropped</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div id="showreel-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Showreel video player">
+  <div class="showreel-backdrop"></div>
+  <button class="showreel-close" aria-label="Minimize">&#215;</button>
+  <div class="showreel-inner">
+    <iframe
+      id="showreel-full"
+      src=""
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      title="Cxbane Showreel">
+    </iframe>
+  </div>
+</div>
+
 {# ─── GALLERY ──────────────────────────────────────────────────────────────── #}
 <section id="gallery" aria-labelledby="gallery-heading">
   <div class="container">
