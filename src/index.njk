@@ -13,6 +13,7 @@ title: Cxbane — Art & Music
 
   <ul class="nav-links" id="nav-links" role="list">
     <li><a href="#about"   class="nav-link">About</a></li>
+    <li><a href="#gamejam" class="nav-link">Games</a></li>
     <li><a href="#gallery" class="nav-link">Work</a></li>
     <li><a href="#music"   class="nav-link">Music</a></li>
     <li><a href="#links"   class="nav-link">Links</a></li>
@@ -102,7 +103,7 @@ title: Cxbane — Art & Music
   </div>
   <div class="showreel-credits">
     <div class="container">
-      <p class="credits-title">Age of Empires · Red Bull Gaming · Agency Beton</p>
+      <p class="credits-title">Age of Empires · Red Bull Gaming · <a href="https://www.beton.video/" target="_blank" rel="noopener noreferrer">Agency beton.</a></p>
       <ul class="credits-list">
         <li><span class="credits-role">Written &amp; Directed by</span> Dennis Charly Bergande</li>
         <li><span class="credits-role">Creative Producer</span> Vlad Kiselev aka <span class="credits-highlight">Cxbane</span></li>
@@ -128,6 +129,257 @@ title: Cxbane — Art & Music
     </iframe>
   </div>
 </div>
+
+{# ─── GAME JAM ─────────────────────────────────────────────────────────────── #}
+<section id="gamejam" aria-labelledby="gamejam-heading">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="eyebrow">Interactive</span>
+      <h2 class="section-heading" id="gamejam-heading">Game Jams</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gamejam-grid fade-in">
+
+      <div class="gamejam-card-wrapper">
+
+        <div class="gamejam-card">
+
+          <div class="nc-hero">
+            <img src="/assets/images/game jam assets/necrocure/main_menu_splashart_02.png" alt="Necrocure — a UFO cow abduction game" class="nc-hero-img" />
+            <div class="nc-hero-vignette" aria-hidden="true"></div>
+            <img class="nc-ufo" src="/assets/images/game jam assets/necrocure/ufo_00.png" alt="" aria-hidden="true" />
+          </div>
+
+          <div class="nc-body">
+            <h3 class="nc-title">NECROCURE</h3>
+            <div class="nc-tags">
+              <span class="nc-tag">Game Jam · 2026</span>
+              <span class="nc-tag">UFO · Farming · Arcade</span>
+            </div>
+            <p class="nc-desc">Pilot your UFO and abduct infected cows to stop a strange plague spreading through the farm. Built for <a href="https://itch.io/jam/mini-jame-gam-55" target="_blank" rel="noopener noreferrer" class="nc-jam-link">Mini Jame Gam 55</a>.</p>
+            <a href="https://vexury.itch.io/necrocure" target="_blank" rel="noopener noreferrer" class="nc-cta">Play on itch.io ↗</a>
+            <ul class="credits-list nc-credits">
+              <li><span class="credits-role">Art &amp; Music</span> Vlad aka <span class="credits-highlight">Cxbane</span></li>
+              <li><span class="credits-role">Development</span> Moritz Grauer <a href="https://vexury.dev" target="_blank" rel="noopener noreferrer">vexury.dev</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        {# ─── Sprite bookmark tab ───────────────────────────────────── #}
+        <button
+          class="sprite-bookmark"
+          aria-expanded="false"
+          aria-controls="nc-sprite-panel"
+          aria-label="View Necrocure sprite assets"
+        >
+          <span class="sprite-bookmark-label">Sprites</span>
+        </button>
+
+        {# ─── Sprite panel ──────────────────────────────────────────── #}
+        <div class="sprite-panel" id="nc-sprite-panel" aria-hidden="true" aria-label="Necrocure sprite assets">
+
+          <div class="sprite-panel-header">
+            <span class="sprite-panel-title">Sprite Assets</span>
+            <span class="sprite-panel-count">100 assets</span>
+          </div>
+
+          {# ── Mini Flipbooks ───────────────────────────────────── #}
+          <div class="fb-grid">
+
+            {# — Cow — #}
+            <div class="mini-flipbook" id="nc-fb-cow">
+              <div class="mini-fb-stage" aria-hidden="true">
+                <img class="mini-fb-sprite" src="/assets/images/game jam assets/necrocure/cow_head_front_normal.png" alt="" />
+                <img class="mini-fb-sprite" src="/assets/images/game jam assets/necrocure/cow_body_front_normal.png" alt="" />
+                <img class="mini-fb-sprite" src="/assets/images/game jam assets/necrocure/cow_tail_front_normal.png" alt="" />
+              </div>
+              <div class="mini-fb-bar">
+                <button class="fb-btn mini-fb-play" aria-label="Play/pause">⏸</button>
+                <span class="mini-fb-label">Cow</span>
+                <span class="mini-fb-counter">1/7</span>
+              </div>
+            </div>
+
+            {# — UFO — #}
+            <div class="mini-flipbook" id="nc-fb-ufo">
+              <div class="mini-fb-stage" aria-hidden="true">
+                <img class="mini-fb-sprite" src="/assets/images/game jam assets/necrocure/ufo_00.png" alt="" />
+              </div>
+              <div class="mini-fb-bar">
+                <button class="fb-btn mini-fb-play" aria-label="Play/pause">⏸</button>
+                <span class="mini-fb-label">UFO</span>
+                <span class="mini-fb-counter">1/11</span>
+              </div>
+            </div>
+
+            {# — Beam — #}
+            <div class="mini-flipbook" id="nc-fb-beam">
+              <div class="mini-fb-stage" aria-hidden="true">
+                <img class="mini-fb-sprite" src="/assets/images/game jam assets/necrocure/ufo_beam_outline_01.png" alt="" />
+              </div>
+              <div class="mini-fb-bar">
+                <button class="fb-btn mini-fb-play" aria-label="Play/pause">⏸</button>
+                <span class="mini-fb-label">Beam</span>
+                <span class="mini-fb-counter">1/5</span>
+              </div>
+            </div>
+
+            {# — Puff — #}
+            <div class="mini-flipbook" id="nc-fb-puff">
+              <div class="mini-fb-stage" aria-hidden="true">
+                <img class="mini-fb-sprite" src="/assets/images/game jam assets/necrocure/ufo_cow_disappear_puff_01.png" alt="" />
+              </div>
+              <div class="mini-fb-bar">
+                <button class="fb-btn mini-fb-play" aria-label="Play/pause">⏸</button>
+                <span class="mini-fb-label">Puff</span>
+                <span class="mini-fb-counter">1/6</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="sprite-grid">
+
+            {# — Cow: normal — #}
+            <div class="sprite-item" title="cow_head_front_normal"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_front_normal.png" alt="" loading="lazy" /></div><span class="sprite-name">head·F</span></div>
+            <div class="sprite-item" title="cow_body_front_normal"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_front_normal.png" alt="" loading="lazy" /></div><span class="sprite-name">body·F</span></div>
+            <div class="sprite-item" title="cow_tail_front_normal"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_front_normal.png" alt="" loading="lazy" /></div><span class="sprite-name">tail·F</span></div>
+            <div class="sprite-item" title="cow_head_back_normal"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_back_normal.png" alt="" loading="lazy" /></div><span class="sprite-name">head·B</span></div>
+            <div class="sprite-item" title="cow_body_back_normal"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_back_normal.png" alt="" loading="lazy" /></div><span class="sprite-name">body·B</span></div>
+            <div class="sprite-item" title="cow_tail_back_normal"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_back_normal.png" alt="" loading="lazy" /></div><span class="sprite-name">tail·B</span></div>
+
+            {# — Cow: head front necrotic — #}
+            <div class="sprite-item" title="cow_head_front_nec_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_front_nec_01.png" alt="" loading="lazy" /></div><span class="sprite-name">hF·nec·01</span></div>
+            <div class="sprite-item" title="cow_head_front_nec_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_front_nec_02.png" alt="" loading="lazy" /></div><span class="sprite-name">hF·nec·02</span></div>
+            <div class="sprite-item" title="cow_head_front_nec_3"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_front_nec_3.png" alt="" loading="lazy" /></div><span class="sprite-name">hF·nec·03</span></div>
+            <div class="sprite-item" title="cow_head_front_nec_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_front_nec_04.png" alt="" loading="lazy" /></div><span class="sprite-name">hF·nec·04</span></div>
+            <div class="sprite-item" title="cow_head_front_nec_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_front_nec_05.png" alt="" loading="lazy" /></div><span class="sprite-name">hF·nec·05</span></div>
+            <div class="sprite-item" title="cow_head_front_nec_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_front_nec_06.png" alt="" loading="lazy" /></div><span class="sprite-name">hF·nec·06</span></div>
+
+            {# — Cow: head back necrotic — #}
+            <div class="sprite-item" title="cow_head_back_nec_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_back_nec_01.png" alt="" loading="lazy" /></div><span class="sprite-name">hB·nec·01</span></div>
+            <div class="sprite-item" title="cow_head_back_nec_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_back_nec_02.png" alt="" loading="lazy" /></div><span class="sprite-name">hB·nec·02</span></div>
+            <div class="sprite-item" title="cow_head_back_nec_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_back_nec_03.png" alt="" loading="lazy" /></div><span class="sprite-name">hB·nec·03</span></div>
+            <div class="sprite-item" title="cow_head_back_nec_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_back_nec_04.png" alt="" loading="lazy" /></div><span class="sprite-name">hB·nec·04</span></div>
+            <div class="sprite-item" title="cow_head_back_nec_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_back_nec_05.png" alt="" loading="lazy" /></div><span class="sprite-name">hB·nec·05</span></div>
+            <div class="sprite-item" title="cow_head_back_nec_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_head_back_nec_06.png" alt="" loading="lazy" /></div><span class="sprite-name">hB·nec·06</span></div>
+
+            {# — Cow: body front necrotic — #}
+            <div class="sprite-item" title="cow_body_front_nec_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_front_nec_01.png" alt="" loading="lazy" /></div><span class="sprite-name">bF·nec·01</span></div>
+            <div class="sprite-item" title="cow_body_front_nec_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_front_nec_02.png" alt="" loading="lazy" /></div><span class="sprite-name">bF·nec·02</span></div>
+            <div class="sprite-item" title="cow_body_front_nec_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_front_nec_03.png" alt="" loading="lazy" /></div><span class="sprite-name">bF·nec·03</span></div>
+            <div class="sprite-item" title="cow_body_front_nec_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_front_nec_04.png" alt="" loading="lazy" /></div><span class="sprite-name">bF·nec·04</span></div>
+            <div class="sprite-item" title="cow_body_front_nec_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_front_nec_05.png" alt="" loading="lazy" /></div><span class="sprite-name">bF·nec·05</span></div>
+            <div class="sprite-item" title="cow_body_front_nec_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_front_nec_06.png" alt="" loading="lazy" /></div><span class="sprite-name">bF·nec·06</span></div>
+
+            {# — Cow: body back necrotic — #}
+            <div class="sprite-item" title="cow_body_back_nec_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_back_nec_01.png" alt="" loading="lazy" /></div><span class="sprite-name">bB·nec·01</span></div>
+            <div class="sprite-item" title="cow_body_back_nec_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_back_nec_02.png" alt="" loading="lazy" /></div><span class="sprite-name">bB·nec·02</span></div>
+            <div class="sprite-item" title="cow_body_back_nec_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_back_nec_03.png" alt="" loading="lazy" /></div><span class="sprite-name">bB·nec·03</span></div>
+            <div class="sprite-item" title="cow_body_back_nec_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_back_nec_04.png" alt="" loading="lazy" /></div><span class="sprite-name">bB·nec·04</span></div>
+            <div class="sprite-item" title="cow_body_back_nec_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_back_nec_05.png" alt="" loading="lazy" /></div><span class="sprite-name">bB·nec·05</span></div>
+            <div class="sprite-item" title="cow_body_back_nec_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_body_back_nec_06.png" alt="" loading="lazy" /></div><span class="sprite-name">bB·nec·06</span></div>
+
+            {# — Cow: tail front necrotic — #}
+            <div class="sprite-item" title="cow_tail_front_nec_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_front_nec_01.png" alt="" loading="lazy" /></div><span class="sprite-name">tF·nec·01</span></div>
+            <div class="sprite-item" title="cow_tail_front_nec_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_front_nec_02.png" alt="" loading="lazy" /></div><span class="sprite-name">tF·nec·02</span></div>
+            <div class="sprite-item" title="cow_tail_front_nec_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_front_nec_03.png" alt="" loading="lazy" /></div><span class="sprite-name">tF·nec·03</span></div>
+            <div class="sprite-item" title="cow_tail_front_nec_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_front_nec_04.png" alt="" loading="lazy" /></div><span class="sprite-name">tF·nec·04</span></div>
+            <div class="sprite-item" title="cow_tail_front_nec_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_front_nec_05.png" alt="" loading="lazy" /></div><span class="sprite-name">tF·nec·05</span></div>
+            <div class="sprite-item" title="cow_tail_front_nec_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_front_nec_06.png" alt="" loading="lazy" /></div><span class="sprite-name">tF·nec·06</span></div>
+
+            {# — Cow: tail back necrotic — #}
+            <div class="sprite-item" title="cow_tail_back_nec_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_back_nec_01.png" alt="" loading="lazy" /></div><span class="sprite-name">tB·nec·01</span></div>
+            <div class="sprite-item" title="cow_tail_back_nec_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_back_nec_02.png" alt="" loading="lazy" /></div><span class="sprite-name">tB·nec·02</span></div>
+            <div class="sprite-item" title="cow_tail_back_nec_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_back_nec_03.png" alt="" loading="lazy" /></div><span class="sprite-name">tB·nec·03</span></div>
+            <div class="sprite-item" title="cow_tail_back_nec_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_back_nec_04.png" alt="" loading="lazy" /></div><span class="sprite-name">tB·nec·04</span></div>
+            <div class="sprite-item" title="cow_tail_back_nec_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_back_nec_05.png" alt="" loading="lazy" /></div><span class="sprite-name">tB·nec·05</span></div>
+            <div class="sprite-item" title="cow_tail_back_nec_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_tail_back_nec_06.png" alt="" loading="lazy" /></div><span class="sprite-name">tB·nec·06</span></div>
+
+            {# — UFO: frames — #}
+            <div class="sprite-item" title="ufo_00"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_00.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·00</span></div>
+            <div class="sprite-item" title="ufo_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_01.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·01</span></div>
+            <div class="sprite-item" title="ufo_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_02.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·02</span></div>
+            <div class="sprite-item" title="ufo_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_03.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·03</span></div>
+            <div class="sprite-item" title="ufo_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_04.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·04</span></div>
+            <div class="sprite-item" title="ufo_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_05.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·05</span></div>
+            <div class="sprite-item" title="ufo_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_06.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·06</span></div>
+            <div class="sprite-item" title="ufo_07"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_07.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·07</span></div>
+            <div class="sprite-item" title="ufo_08"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_08.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·08</span></div>
+            <div class="sprite-item" title="ufo_09"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_09.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·09</span></div>
+            <div class="sprite-item" title="ufo_10"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_10.png" alt="" loading="lazy" /></div><span class="sprite-name">ufo·10</span></div>
+
+            {# — UFO: beam — #}
+            <div class="sprite-item" title="ufo_beam_outline_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_beam_outline_01.png" alt="" loading="lazy" /></div><span class="sprite-name">beam·ol·01</span></div>
+            <div class="sprite-item" title="ufo_beam_outline_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_beam_outline_02.png" alt="" loading="lazy" /></div><span class="sprite-name">beam·ol·02</span></div>
+            <div class="sprite-item" title="ufo_beam_outline_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_beam_outline_03.png" alt="" loading="lazy" /></div><span class="sprite-name">beam·ol·03</span></div>
+            <div class="sprite-item" title="ufo_beam_outline_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_beam_outline_04.png" alt="" loading="lazy" /></div><span class="sprite-name">beam·ol·04</span></div>
+            <div class="sprite-item" title="ufo_beam_fill_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_beam_fill_01.png" alt="" loading="lazy" /></div><span class="sprite-name">beam·fill</span></div>
+
+            {# — UFO: HUD elements — #}
+            <div class="sprite-item" title="ufo_battery_outline_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_battery_outline_01.png" alt="" loading="lazy" /></div><span class="sprite-name">batt·ol</span></div>
+            <div class="sprite-item" title="ufo_battery_fill_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_battery_fill_01.png" alt="" loading="lazy" /></div><span class="sprite-name">batt·fill</span></div>
+            <div class="sprite-item" title="ufo_milk_bar_outline_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_milk_bar_outline_01.png" alt="" loading="lazy" /></div><span class="sprite-name">milk·ol</span></div>
+            <div class="sprite-item" title="ufo_milk_bar_fill_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_milk_bar_fill_01.png" alt="" loading="lazy" /></div><span class="sprite-name">milk·fill</span></div>
+
+            {# — UFO: disappear puff — #}
+            <div class="sprite-item" title="ufo_cow_disappear_puff_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_cow_disappear_puff_01.png" alt="" loading="lazy" /></div><span class="sprite-name">puff·01</span></div>
+            <div class="sprite-item" title="ufo_cow_disappear_puff_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_cow_disappear_puff_02.png" alt="" loading="lazy" /></div><span class="sprite-name">puff·02</span></div>
+            <div class="sprite-item" title="ufo_cow_disappear_puff_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_cow_disappear_puff_03.png" alt="" loading="lazy" /></div><span class="sprite-name">puff·03</span></div>
+            <div class="sprite-item" title="ufo_cow_disappear_puff_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_cow_disappear_puff_04.png" alt="" loading="lazy" /></div><span class="sprite-name">puff·04</span></div>
+            <div class="sprite-item" title="ufo_cow_disappear_puff_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_cow_disappear_puff_05.png" alt="" loading="lazy" /></div><span class="sprite-name">puff·05</span></div>
+            <div class="sprite-item" title="ufo_cow_disappear_puff_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/ufo_cow_disappear_puff_06.png" alt="" loading="lazy" /></div><span class="sprite-name">puff·06</span></div>
+
+            {# — Grass — #}
+            <div class="sprite-item" title="grass_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_01.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·01</span></div>
+            <div class="sprite-item" title="grass_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_02.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·02</span></div>
+            <div class="sprite-item" title="grass_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_03.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·03</span></div>
+            <div class="sprite-item" title="grass_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_04.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·04</span></div>
+            <div class="sprite-item" title="grass_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_05.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·05</span></div>
+            <div class="sprite-item" title="grass_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_06.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·06</span></div>
+            <div class="sprite-item" title="grass_07"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_07.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·07</span></div>
+            <div class="sprite-item" title="grass_08"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_08.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·08</span></div>
+            <div class="sprite-item" title="grass_09"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/grass_09.png" alt="" loading="lazy" /></div><span class="sprite-name">grass·09</span></div>
+
+            {# — Trees & misc — #}
+            <div class="sprite-item" title="tree_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/tree_01.png" alt="" loading="lazy" /></div><span class="sprite-name">tree</span></div>
+            <div class="sprite-item" title="tree_crown_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/tree_crown_01.png" alt="" loading="lazy" /></div><span class="sprite-name">tree·crown</span></div>
+            <div class="sprite-item" title="cow_poop_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/cow_poop_01.png" alt="" loading="lazy" /></div><span class="sprite-name">poop</span></div>
+
+            {# — Flowers — #}
+            <div class="sprite-item" title="flowers_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flowers_01.png" alt="" loading="lazy" /></div><span class="sprite-name">flowers·01</span></div>
+            <div class="sprite-item" title="flowers_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flowers_02.png" alt="" loading="lazy" /></div><span class="sprite-name">flowers·02</span></div>
+            <div class="sprite-item" title="flowers_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flowers_03.png" alt="" loading="lazy" /></div><span class="sprite-name">flowers·03</span></div>
+            <div class="sprite-item" title="flowers_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flowers_04.png" alt="" loading="lazy" /></div><span class="sprite-name">flowers·04</span></div>
+            <div class="sprite-item" title="flower_head_red_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flower_head_red_01.png" alt="" loading="lazy" /></div><span class="sprite-name">fl·red</span></div>
+            <div class="sprite-item" title="flower_head_purple_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flower_head_purple_01.png" alt="" loading="lazy" /></div><span class="sprite-name">fl·purple</span></div>
+            <div class="sprite-item" title="flower_spikey_head_purple_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flower_spikey_head_purple_01.png" alt="" loading="lazy" /></div><span class="sprite-name">fl·spikey</span></div>
+            <div class="sprite-item" title="flower_head_yellow_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/flower_head_yellow_01.png" alt="" loading="lazy" /></div><span class="sprite-name">fl·yellow</span></div>
+
+            {# — Farm — #}
+            <div class="sprite-item" title="farm_fence_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_01.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·01</span></div>
+            <div class="sprite-item" title="farm_fence_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_02.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·02</span></div>
+            <div class="sprite-item" title="farm_fence_03"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_03.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·03</span></div>
+            <div class="sprite-item" title="farm_fence_04"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_04.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·04</span></div>
+            <div class="sprite-item" title="farm_fence_05"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_05.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·05</span></div>
+            <div class="sprite-item" title="farm_fence_06"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_06.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·06</span></div>
+            <div class="sprite-item" title="farm_fence_07"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_07.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·07</span></div>
+            <div class="sprite-item" title="farm_fence_08"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_08.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·08</span></div>
+            <div class="sprite-item" title="farm_fence_09"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_fence_09.png" alt="" loading="lazy" /></div><span class="sprite-name">fence·09</span></div>
+            <div class="sprite-item" title="farm_house_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_house_01.png" alt="" loading="lazy" /></div><span class="sprite-name">house</span></div>
+            <div class="sprite-item" title="farm_hay_01"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_hay_01.png" alt="" loading="lazy" /></div><span class="sprite-name">hay·01</span></div>
+            <div class="sprite-item" title="farm_hay_02"><div class="sprite-thumb"><img src="/assets/images/game jam assets/necrocure/farm_hay_02.png" alt="" loading="lazy" /></div><span class="sprite-name">hay·02</span></div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
 
 {# ─── GALLERY ──────────────────────────────────────────────────────────────── #}
 <section id="gallery" aria-labelledby="gallery-heading">
