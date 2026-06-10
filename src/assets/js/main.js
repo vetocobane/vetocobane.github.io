@@ -196,6 +196,41 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') lbShow(lbIndex + 1);
 });
 
+/* ─── Music video banner ────────────────────────────────────── */
+const mvBanner    = document.getElementById('mv-banner');
+const mvModal     = document.getElementById('mv-modal');
+const mvFullFrame = document.getElementById('mv-full');
+const mvCloseBtn  = mvModal.querySelector('.showreel-close');
+const mvBackdrop  = mvModal.querySelector('.showreel-backdrop');
+
+const MV_SRC = 'https://www.youtube.com/embed/qZbKqWqK9gc?autoplay=1&rel=0';
+
+function openMv() {
+  mvFullFrame.src = MV_SRC;
+  mvModal.classList.add('open');
+  mvModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  mvCloseBtn.focus();
+}
+
+function closeMv() {
+  mvModal.classList.remove('open');
+  mvModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  mvFullFrame.src = '';
+}
+
+mvBanner.addEventListener('click', openMv);
+mvBanner.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMv(); }
+});
+mvCloseBtn.addEventListener('click', closeMv);
+mvBackdrop.addEventListener('click', closeMv);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && mvModal.classList.contains('open')) closeMv();
+});
+
 /* ─── Sprite gallery panel ──────────────────────────────────── */
 document.querySelectorAll('.gamejam-card-wrapper').forEach((wrapper) => {
   const bookmark = wrapper.querySelector('.sprite-bookmark');
@@ -230,7 +265,7 @@ document.querySelectorAll('.gamejam-card-wrapper').forEach((wrapper) => {
   const BASE = '/assets/images/game jam assets/necrocure/';
   const src  = (n) => BASE + n + '.png';
 
-  const COW_FRAMES = [
+  const COW_FRONT_FRAMES = [
     { head: 'cow_head_front_normal', body: 'cow_body_front_normal', tail: 'cow_tail_front_normal' },
     { head: 'cow_head_front_nec_01', body: 'cow_body_front_nec_01', tail: 'cow_tail_front_nec_01' },
     { head: 'cow_head_front_nec_02', body: 'cow_body_front_nec_02', tail: 'cow_tail_front_nec_02' },
@@ -240,6 +275,16 @@ document.querySelectorAll('.gamejam-card-wrapper').forEach((wrapper) => {
     { head: 'cow_head_front_nec_06', body: 'cow_body_front_nec_06', tail: 'cow_tail_front_nec_06' },
   ];
 
+  const COW_BACK_FRAMES = [
+    { head: 'cow_head_back_normal', body: 'cow_body_back_normal', tail: 'cow_tail_back_normal' },
+    { head: 'cow_head_back_nec_01', body: 'cow_body_back_nec_01', tail: 'cow_tail_back_nec_01' },
+    { head: 'cow_head_back_nec_02', body: 'cow_body_back_nec_02', tail: 'cow_tail_back_nec_02' },
+    { head: 'cow_head_back_nec_03', body: 'cow_body_back_nec_03', tail: 'cow_tail_back_nec_03' },
+    { head: 'cow_head_back_nec_04', body: 'cow_body_back_nec_04', tail: 'cow_tail_back_nec_04' },
+    { head: 'cow_head_back_nec_05', body: 'cow_body_back_nec_05', tail: 'cow_tail_back_nec_05' },
+    { head: 'cow_head_back_nec_06', body: 'cow_body_back_nec_06', tail: 'cow_tail_back_nec_06' },
+  ];
+
   const SEQS = {
     'nc-fb-ufo':  ['ufo_00','ufo_01','ufo_02','ufo_03','ufo_04','ufo_05','ufo_06','ufo_07','ufo_08','ufo_09','ufo_10'],
     'nc-fb-beam': ['ufo_beam_outline_01','ufo_beam_outline_02','ufo_beam_outline_03','ufo_beam_outline_04','ufo_beam_fill_01'],
@@ -247,24 +292,11 @@ document.querySelectorAll('.gamejam-card-wrapper').forEach((wrapper) => {
   };
 
   function makeFlipper(el, totalFrames, onTick) {
-    const playBtn = el.querySelector('.mini-fb-play');
-    const counter = el.querySelector('.mini-fb-counter');
-    let frame   = 0;
-    let playing = true;
-    let timer   = setInterval(tick, 160);
-
-    function tick() {
+    let frame = 0;
+    setInterval(() => {
       frame = (frame + 1) % totalFrames;
       onTick(frame);
-      counter.textContent = (frame + 1) + '/' + totalFrames;
-    }
-
-    playBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      playing = !playing;
-      playBtn.textContent = playing ? '⏸' : '▶';
-      playing ? (timer = setInterval(tick, 160)) : clearInterval(timer);
-    });
+    }, 160);
   }
 
   // UFO, Beam, Puff — single sprite
@@ -275,12 +307,24 @@ document.querySelectorAll('.gamejam-card-wrapper').forEach((wrapper) => {
     makeFlipper(el, frames.length, (f) => { img.src = src(frames[f]); });
   });
 
-  // Cow — 3 stacked sprites (head, body, tail)
-  const cowEl = document.getElementById('nc-fb-cow');
-  if (cowEl) {
-    const imgs = cowEl.querySelectorAll('.mini-fb-sprite');
-    makeFlipper(cowEl, COW_FRAMES.length, (f) => {
-      const cf = COW_FRAMES[f];
+  // Cow front — 3 stacked sprites (head, body, tail)
+  const cowFrontEl = document.getElementById('nc-fb-cow-front');
+  if (cowFrontEl) {
+    const imgs = cowFrontEl.querySelectorAll('.mini-fb-sprite');
+    makeFlipper(cowFrontEl, COW_FRONT_FRAMES.length, (f) => {
+      const cf = COW_FRONT_FRAMES[f];
+      imgs[0].src = src(cf.head);
+      imgs[1].src = src(cf.body);
+      imgs[2].src = src(cf.tail);
+    });
+  }
+
+  // Cow back — 3 stacked sprites (head, body, tail)
+  const cowBackEl = document.getElementById('nc-fb-cow-back');
+  if (cowBackEl) {
+    const imgs = cowBackEl.querySelectorAll('.mini-fb-sprite');
+    makeFlipper(cowBackEl, COW_BACK_FRAMES.length, (f) => {
+      const cf = COW_BACK_FRAMES[f];
       imgs[0].src = src(cf.head);
       imgs[1].src = src(cf.body);
       imgs[2].src = src(cf.tail);
