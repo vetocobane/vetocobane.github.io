@@ -514,8 +514,16 @@ section { padding: 120px 0; }
 
 .gamejam-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .gamejam-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .gamejam-grid { grid-template-columns: 1fr; }
 }
 
 .gamejam-card {
@@ -571,17 +579,22 @@ section { padding: 120px 0; }
 
 .nc-title {
   font-family: var(--f-display);
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--text-1);
   text-shadow: 0 0 18px rgba(0, 229, 200, 0.45), 0 0 36px rgba(0, 229, 200, 0.15);
   margin-bottom: 14px;
-  line-height: 1;
+  line-height: 1.1;
+  overflow-wrap: break-word;
 }
 
 .nc-title--red {
   text-shadow: 0 0 18px rgba(220, 50, 50, 0.55), 0 0 36px rgba(220, 50, 50, 0.2);
+}
+
+.nc-title--purple {
+  text-shadow: 0 0 18px rgba(138, 60, 220, 0.65), 0 0 36px rgba(138, 60, 220, 0.25);
 }
 
 .nc-tags {
@@ -1428,6 +1441,7 @@ section { padding: 120px 0; }
 ══════════════════════════════════════════════════════════════ */
 
 .gamejam-card-wrapper {
+  min-width: 0;
   position: relative;
   display: flex;
   align-items: stretch;
@@ -1750,6 +1764,11 @@ section { padding: 120px 0; }
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;
+}
+
+#son-sprite-panel .sprite-thumb img,
+#son-sprite-panel .mini-fb-sprite {
+  mix-blend-mode: multiply;
 }
 
 @media (max-width: 640px) {
