@@ -145,31 +145,26 @@ applyFilter('illustrations');
   const lbBackdrop = lightbox.querySelector('.lb-backdrop');
   const items      = document.querySelectorAll('.gallery-item');
 
+  let slides  = [];
   let lbIndex = 0;
 
-  function lbVisible() {
-    return [...items].filter(item => item.style.display !== 'none');
+  function lbApply(s) {
+    lbImg.src = s.src; lbImg.alt = s.alt;
+    lbTitleEl.textContent = s.title; lbMetaEl.textContent = s.meta;
   }
 
   function lbShow(index) {
-    const visible = lbVisible();
-    lbIndex = (index + visible.length) % visible.length;
-    const item  = visible[lbIndex];
-    const src   = item.querySelector('img').src;
-    const alt   = item.querySelector('img').alt;
-    const title = item.querySelector('.item-title').textContent;
-    const meta  = item.querySelector('.item-meta').textContent;
+    lbIndex = (index + slides.length) % slides.length;
+    const s = slides[lbIndex];
 
     if (lightbox.classList.contains('open')) {
       lbImg.classList.add('lb-switching');
       setTimeout(() => {
-        lbImg.src = src; lbImg.alt = alt;
-        lbTitleEl.textContent = title; lbMetaEl.textContent = meta;
+        lbApply(s);
         lbImg.classList.remove('lb-switching');
       }, 150);
     } else {
-      lbImg.src = src; lbImg.alt = alt;
-      lbTitleEl.textContent = title; lbMetaEl.textContent = meta;
+      lbApply(s);
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -185,9 +180,31 @@ applyFilter('illustrations');
 
   items.forEach((item) => {
     item.addEventListener('click', () => {
-      const visible = lbVisible();
+      const visible = [...items].filter(i => i.style.display !== 'none');
       const idx = visible.indexOf(item);
-      if (idx !== -1) lbShow(idx);
+      if (idx === -1) return;
+      slides = visible.map(i => ({
+        src:   i.querySelector('img').src,
+        alt:   i.querySelector('img').alt,
+        title: i.querySelector('.item-title').textContent,
+        meta:  i.querySelector('.item-meta').textContent,
+      }));
+      lbShow(idx);
+    });
+  });
+
+  document.querySelectorAll('.shot-grid').forEach((grid) => {
+    const shots = [...grid.querySelectorAll('.shot-item')];
+    shots.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        slides = shots.map(b => ({
+          src:   b.dataset.shot,
+          alt:   b.querySelector('img').alt,
+          title: b.dataset.title || '',
+          meta:  b.dataset.meta  || '',
+        }));
+        lbShow(i);
+      });
     });
   });
 
