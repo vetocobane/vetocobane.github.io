@@ -283,7 +283,7 @@ applyFilter('illustrations');
       el.style.display = '';
       const dir = clamp(off, -1, 1);
       const s   = Math.max(0.6, 1 - a * SCALE);
-      el.style.opacity   = Math.max(0, 1 - a * FADE);
+      el.style.filter    = `brightness(${Math.max(0.35, 1 - a * FADE)})`;
       el.style.zIndex    = Math.round(100 - a);
       el.style.transform =
         `translateY(-50%) translateX(${off * sp}px) translateZ(${-a * DEPTH}px) ` +
@@ -372,6 +372,7 @@ document.querySelectorAll('.gamejam-card-wrapper').forEach((wrapper) => {
   const panel    = wrapper.querySelector('.sprite-panel');
   if (!bookmark || !panel) return;
 
+  const canHover = window.matchMedia('(hover: hover)').matches;
   let closeTimer = null;
 
   function openPanel() {
@@ -381,18 +382,33 @@ document.querySelectorAll('.gamejam-card-wrapper').forEach((wrapper) => {
     panel.setAttribute('aria-hidden', 'false');
   }
 
-  function scheduleClose() {
-    closeTimer = setTimeout(() => {
-      wrapper.classList.remove('sprites-open');
-      bookmark.setAttribute('aria-expanded', 'false');
-      panel.setAttribute('aria-hidden', 'true');
-    }, 110);
+  function closePanel() {
+    clearTimeout(closeTimer);
+    wrapper.classList.remove('sprites-open');
+    bookmark.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-hidden', 'true');
   }
 
-  bookmark.addEventListener('mouseenter', openPanel);
-  bookmark.addEventListener('mouseleave', scheduleClose);
-  panel.addEventListener('mouseenter', openPanel);
-  panel.addEventListener('mouseleave', scheduleClose);
+  function scheduleClose() {
+    closeTimer = setTimeout(closePanel, 110);
+  }
+
+  if (canHover) {
+    bookmark.addEventListener('mouseenter', openPanel);
+    bookmark.addEventListener('mouseleave', scheduleClose);
+    panel.addEventListener('mouseenter', openPanel);
+    panel.addEventListener('mouseleave', scheduleClose);
+  } else {
+    document.addEventListener('click', (e) => {
+      if (wrapper.classList.contains('sprites-open') && !wrapper.contains(e.target)) closePanel();
+    });
+  }
+
+  bookmark.addEventListener('click', (e) => {
+    if (canHover && e.detail !== 0) return;
+    if (wrapper.classList.contains('sprites-open')) closePanel();
+    else openPanel();
+  });
 });
 
 /* ─── Necrocure mini-flipbooks ───────────────────────────────── */
