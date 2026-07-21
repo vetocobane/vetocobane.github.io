@@ -139,7 +139,9 @@ title: Cxbane — Art & Music
       <h2 class="section-heading" id="gamejam-heading">Game Jams</h2>
       <div class="rule"></div>
     </div>
-    <div class="gamejam-grid fade-in">
+    <div class="gamejam-coverflow fade-in">
+      <div class="gamejam-stage" id="gamejam-stage" tabindex="0" aria-label="Game jam projects, drag or use arrow keys to browse">
+        <div class="gamejam-track" id="gamejam-track">
 
       <div class="gamejam-card-wrapper">
 
@@ -289,6 +291,11 @@ title: Cxbane — Art & Music
           <div class="nc-hero">
             <img src="/assets/images/game jam assets/shrimpaway/cover.png" alt="ShrimpAway — a beach arcade game" class="nc-hero-img" />
             <div class="nc-hero-vignette" aria-hidden="true"></div>
+            <div class="jam-award" role="img" aria-label="Second place for Gameplay out of 439 entries">
+              <span class="jam-award-place">2nd Place</span>
+              <span class="jam-award-cat">Gameplay</span>
+              <span class="jam-award-sub">of 439 entries</span>
+            </div>
           </div>
 
           <div class="nc-body">
@@ -428,6 +435,64 @@ title: Cxbane — Art & Music
 
       </div>
 
+      <div class="gamejam-card-wrapper">
+
+        <div class="gamejam-card">
+
+          <div class="nc-hero">
+            <img src="/assets/images/game jam assets/scaleton/cover.png" alt="Scaleton Inc. — a skeleton shop tycoon game" class="nc-hero-img" />
+            <div class="nc-hero-vignette" aria-hidden="true"></div>
+          </div>
+
+          <div class="nc-body">
+            <h3 class="nc-title nc-title--gold">SCALETON INC.</h3>
+            <div class="nc-tags">
+              <span class="nc-tag">Game Jam · 2026</span>
+              <span class="nc-tag">Shop Tycoon · Dungeon · Management</span>
+            </div>
+            <p class="nc-desc">You are Scaleton, a skeleton with a shop licence three levels below daylight. Serve the queue, buy the room next door, and keep the rats down. Built for <a href="https://itch.io/jam/kenney-jam-2026" target="_blank" rel="noopener noreferrer" class="nc-jam-link">Kenney Jam 2026</a>.</p>
+            <a href="https://vexury.itch.io/scaleton-inc" target="_blank" rel="noopener noreferrer" class="nc-cta">Play on itch.io ↗</a>
+            <ul class="credits-list nc-credits">
+              <li><span class="credits-role">Art Direction, Music &amp; SFX</span> Vlad aka <span class="credits-highlight">Cxbane</span></li>
+              <li><span class="credits-role">Development</span> Moritz Grauer <a href="https://vexury.dev" target="_blank" rel="noopener noreferrer">vexury.dev</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        {# ─── Screenshot bookmark tab ───────────────────────────────── #}
+        <button
+          class="sprite-bookmark"
+          aria-expanded="false"
+          aria-controls="sc-sprite-panel"
+          aria-label="View Scaleton Inc. screenshots"
+        >
+          <span class="sprite-bookmark-label">Screens</span>
+        </button>
+
+        {# ─── Screenshot panel ──────────────────────────────────────── #}
+        <div class="sprite-panel" id="sc-sprite-panel" aria-hidden="true" aria-label="Scaleton Inc. screenshots">
+
+          <div class="sprite-panel-header">
+            <span class="sprite-panel-title">Screenshots</span>
+            <span class="sprite-panel-count">6 shots</span>
+          </div>
+
+          <div class="shot-grid">
+            <button class="shot-item" type="button" data-shot="/assets/screenshots/scaleton/screenshot_01.png" data-title="Scaleton Inc." data-meta="Screenshot"><img src="/assets/screenshots/scaleton/screenshot_01.png" alt="Scaleton Inc. screenshot" loading="lazy" /></button>
+            <button class="shot-item" type="button" data-shot="/assets/screenshots/scaleton/screenshot_02.png" data-title="Scaleton Inc." data-meta="Screenshot"><img src="/assets/screenshots/scaleton/screenshot_02.png" alt="Scaleton Inc. screenshot" loading="lazy" /></button>
+            <button class="shot-item" type="button" data-shot="/assets/screenshots/scaleton/screenshot_03.png" data-title="Scaleton Inc." data-meta="Screenshot"><img src="/assets/screenshots/scaleton/screenshot_03.png" alt="Scaleton Inc. screenshot" loading="lazy" /></button>
+            <button class="shot-item" type="button" data-shot="/assets/screenshots/scaleton/screenshot_04.png" data-title="Scaleton Inc." data-meta="Screenshot"><img src="/assets/screenshots/scaleton/screenshot_04.png" alt="Scaleton Inc. screenshot" loading="lazy" /></button>
+            <button class="shot-item" type="button" data-shot="/assets/screenshots/scaleton/screenshot_05.png" data-title="Scaleton Inc." data-meta="Screenshot"><img src="/assets/screenshots/scaleton/screenshot_05.png" alt="Scaleton Inc. screenshot" loading="lazy" /></button>
+            <button class="shot-item" type="button" data-shot="/assets/screenshots/scaleton/screenshot_06.png" data-title="Scaleton Inc." data-meta="Screenshot"><img src="/assets/screenshots/scaleton/screenshot_06.png" alt="Scaleton Inc. screenshot" loading="lazy" /></button>
+          </div>
+        </div>
+
+      </div>
+
+        </div>
+      </div>
+      <div class="gamejam-counter" id="gamejam-counter" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -719,7 +784,7 @@ title: Cxbane — Art & Music
     </div>
   </div>
 
-  <div class="showreel-banner" id="mv-banner" role="button" tabindex="0" aria-label="Watch music video">
+  <div class="showreel-banner" id="mv-banner" data-mv="qZbKqWqK9gc" role="button" tabindex="0" aria-label="Watch music video">
     <iframe
       id="mv-bg"
       src="https://www.youtube.com/embed/qZbKqWqK9gc?autoplay=1&mute=1&loop=1&controls=0&playlist=qZbKqWqK9gc&rel=0&modestbranding=1"
@@ -738,6 +803,31 @@ title: Cxbane — Art & Music
       <p class="credits-title">CXBANE – HOLY SHIT (PROD. BY BENJAMIN BENTLY)</p>
       <ul class="credits-list">
         <li><span class="credits-role">Directed by</span> Dennis Charly Bergande</li>
+        <li><span class="credits-role">Written &amp; Performed by</span> Cxbane</li>
+        <li><span class="credits-role">Produced by</span> Benjamin Bently</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="showreel-banner" id="mv-banner-2" data-mv="VF9LVnMneio" role="button" tabindex="0" aria-label="Watch music video">
+    <iframe
+      id="mv-bg-2"
+      src="https://www.youtube.com/embed/VF9LVnMneio?autoplay=1&mute=1&loop=1&controls=0&playlist=VF9LVnMneio&rel=0&modestbranding=1"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      title="Cxbane Music Video">
+    </iframe>
+    <div class="showreel-hint" aria-hidden="true">
+      <span class="showreel-hint-icon">&#8599;</span>
+      <span class="showreel-hint-label">Play</span>
+    </div>
+  </div>
+
+  <div class="showreel-credits">
+    <div class="container">
+      <p class="credits-title">CXBANE – SCHNEE IM FRÜHLING (PROD. BY BENJAMIN BENTLY)</p>
+      <ul class="credits-list">
+        <li><span class="credits-role">Directed by</span> Jonathan Drumeaux</li>
         <li><span class="credits-role">Written &amp; Performed by</span> Cxbane</li>
         <li><span class="credits-role">Produced by</span> Benjamin Bently</li>
       </ul>

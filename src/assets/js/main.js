@@ -222,18 +222,15 @@ applyFilter('illustrations');
 
 /* ─── Music video banner ────────────────────────────────────── */
 (function () {
-  const mvBanner = document.getElementById('mv-banner');
-  const mvModal  = document.getElementById('mv-modal');
-  if (!mvBanner || !mvModal) return;
+  const mvModal = document.getElementById('mv-modal');
+  if (!mvModal) return;
 
   const mvFullFrame = document.getElementById('mv-full');
   const mvCloseBtn  = mvModal.querySelector('.showreel-close');
   const mvBackdrop  = mvModal.querySelector('.showreel-backdrop');
 
-  const MV_SRC = 'https://www.youtube.com/embed/qZbKqWqK9gc?autoplay=1&rel=0';
-
-  function openMv() {
-    mvFullFrame.src = MV_SRC;
+  function openMv(videoId) {
+    mvFullFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     mvModal.classList.add('open');
     mvModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -246,15 +243,127 @@ applyFilter('illustrations');
     mvFullFrame.src = '';
   }
 
-  mvBanner.addEventListener('click', openMv);
-  mvBanner.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMv(); }
+  document.querySelectorAll('.showreel-banner[data-mv]').forEach((banner) => {
+    banner.addEventListener('click', () => openMv(banner.dataset.mv));
+    banner.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMv(banner.dataset.mv); }
+    });
   });
   mvCloseBtn.addEventListener('click', closeMv);
   mvBackdrop.addEventListener('click', closeMv);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mvModal.classList.contains('open')) closeMv();
   });
+})();
+
+/* ─── Game jam coverflow ────────────────────────────────────── */
+(function () {
+  const stage   = document.getElementById('gamejam-stage');
+  const track   = document.getElementById('gamejam-track');
+  const counter = document.getElementById('gamejam-counter');
+  if (!stage || !track) return;
+
+  const cards = [...track.children];
+  const N     = cards.length;
+  if (!N) return;
+
+  const DEPTH = 190, ANGLE = 48, SCALE = 0.12, FADE = 0.26, VISIBLE = 3;
+  const clamp   = (v, a, b) => Math.min(b, Math.max(a, v));
+  const spacing = () => (cards[0].offsetWidth || 430) * 0.68;
+
+  let pos = 1, raf = null;
+
+  function render() {
+    const sp = spacing();
+    for (let i = 0; i < N; i++) {
+      const off = i - pos;
+      const a   = Math.abs(off);
+      const el  = cards[i];
+      if (a > VISIBLE + 0.5) { el.style.display = 'none'; continue; }
+      el.style.display = '';
+      const dir = clamp(off, -1, 1);
+      const s   = Math.max(0.6, 1 - a * SCALE);
+      el.style.opacity   = Math.max(0, 1 - a * FADE);
+      el.style.zIndex    = Math.round(100 - a);
+      el.style.transform =
+        `translateY(-50%) translateX(${off * sp}px) translateZ(${-a * DEPTH}px) ` +
+        `rotateY(${-dir * ANGLE}deg) scale(${s})`;
+    }
+    if (counter) {
+      counter.textContent =
+        String(Math.round(clamp(pos, 0, N - 1)) + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
+    }
+  }
+
+  function glideTo(target) {
+    cancelAnimationFrame(raf);
+    const step = () => {
+      pos += (target - pos) * 0.16;
+      if (Math.abs(target - pos) < 0.001) { pos = target; render(); return; }
+      render();
+      raf = requestAnimationFrame(step);
+    };
+    step();
+  }
+
+  function fitStage() {
+    let h = 0;
+    cards.forEach((el) => { h = Math.max(h, el.offsetHeight); });
+    if (h) stage.style.height = h + 40 + 'px';
+    render();
+  }
+
+  let down = false, dragged = false, startX = 0, startPos = 0;
+  let vel = 0, lastX = 0, lastT = 0;
+
+  stage.addEventListener('pointerdown', (e) => {
+    down = true; dragged = false;
+    startX = lastX = e.clientX; startPos = pos; lastT = performance.now();
+    vel = 0; cancelAnimationFrame(raf);
+  });
+
+  window.addEventListener('pointermove', (e) => {
+    if (!down) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 5) dragged = true;
+    if (!dragged) return;
+    let next = startPos - dx / spacing();
+    if (next < 0)     next = next * 0.35;
+    if (next > N - 1) next = (N - 1) + (next - (N - 1)) * 0.35;
+    pos = next;
+    const now = performance.now(), dt = now - lastT || 16;
+    vel = (e.clientX - lastX) / dt;
+    lastX = e.clientX; lastT = now;
+    render();
+  });
+
+  window.addEventListener('pointerup', () => {
+    if (!down) return;
+    down = false;
+    const momentum = dragged ? clamp(-vel * 90 / spacing(), -3, 3) : 0;
+    glideTo(clamp(Math.round(pos + momentum), 0, N - 1));
+  });
+
+  stage.addEventListener('click', (e) => {
+    if (dragged) { e.preventDefault(); e.stopPropagation(); dragged = false; }
+  }, true);
+
+  stage.addEventListener('dragstart', (e) => e.preventDefault());
+
+  cards.forEach((el, i) => {
+    el.addEventListener('click', (e) => {
+      if (i !== Math.round(pos)) { e.preventDefault(); glideTo(i); }
+    });
+  });
+
+  stage.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); glideTo(clamp(Math.round(pos) - 1, 0, N - 1)); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); glideTo(clamp(Math.round(pos) + 1, 0, N - 1)); }
+  });
+
+  window.addEventListener('resize', fitStage);
+  window.addEventListener('load', fitStage);
+  fitStage();
 })();
 
 /* ─── Sprite gallery panel ──────────────────────────────────── */
